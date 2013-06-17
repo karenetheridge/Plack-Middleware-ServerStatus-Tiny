@@ -57,6 +57,8 @@ __END__
 
 =head1 DESCRIPTION
 
+=for stopwords balancer pids
+
 This middleware is extremely lightweight: faster and smaller than
 L<Plack::Middleware::ServerStatus::Lite>. While that middleware is useful for
 showing the status of all workers, their pids and their last requests, it can
