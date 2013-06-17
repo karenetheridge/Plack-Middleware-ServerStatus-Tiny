@@ -3,7 +3,40 @@ use warnings;
 package Plack::Middleware::ServerStatus::Tiny;
 # ABSTRACT: ...
 
+use parent 'Plack::Middleware';
+use Plack::Util::Accessor qw(path _uptime _access_count);
 
+sub prepare_app
+{
+    my $self = shift;
+
+    die 'missing required option: \'path\'' if not $self->path;
+    warn 'path "' . $self->path . '" does not begin with /, and will never match' if $self->path !~ m{^/};
+
+    $self->_uptime(time);
+    $self->_access_count(0);
+}
+
+sub call
+{
+    my ($self, $env) = @_;
+
+    $self->_access_count($self->_access_count + 1);
+
+    if ($env->{PATH_INFO} eq $self->path)
+    {
+        my $content = 'uptime: ' . (time - $self->_uptime)
+            . '; access count: ' . $self->_access_count;
+
+        my $res = Plack::Response->new('200');
+        $res->content_type('text/plain');
+        $res->content_length(length $content);
+        $res->body($content);
+        return $res->finalize;
+    }
+
+    $self->app->($env);
+}
 
 1;
 __END__
