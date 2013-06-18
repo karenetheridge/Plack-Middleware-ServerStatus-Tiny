@@ -53,7 +53,7 @@ __END__
     };
 
     $ curl http://server:port/status
-    uptime: 120; access count: 10 (this process only)
+    uptime: 120; access count: 10
 
 =head1 DESCRIPTION
 
