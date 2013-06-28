@@ -5,6 +5,7 @@ package Plack::Middleware::ServerStatus::Tiny;
 
 use parent 'Plack::Middleware';
 use Plack::Util::Accessor qw(path _uptime _access_count);
+use Plack::Response;
 
 sub prepare_app
 {
