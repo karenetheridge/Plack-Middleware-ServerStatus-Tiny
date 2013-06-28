@@ -4,7 +4,7 @@ Plack::Middleware::ServerStatus::Tiny - tiny middleware for providing server sta
 
 # VERSION
 
-version 0.001
+version 0.002
 
 # SYNOPSIS
 
@@ -16,7 +16,7 @@ version 0.001
     };
 
     $ curl http://server:port/status
-    uptime: 120; access count: 10 (this process only)
+    uptime: 120; access count: 10
 
 # DESCRIPTION
 
@@ -26,8 +26,9 @@ showing the status of all workers, their pids and their last requests, it can
 be a bit heavy for frequent pinging (for example by a load balancer to confirm
 that the server is still up).
 
-This middleware does not use the disk, keeping all its data in memory in the
-worker process.  All it returns is the number of seconds since the last server
+This middleware does not interrogate the system about running processes,
+and does not use the disk, keeping all its data in memory in the
+worker process. All it returns is the number of seconds since the last server
 restart, and how many requests this particular process has serviced.
 
 # CONFIGURATION
