@@ -73,13 +73,9 @@ restart, and how many requests this particular process has serviced.
 
 =head1 CONFIGURATION
 
-=over 4
-
-=item * C<path>
+=head2 C<path>
 
 The path which returns the server status.
-
-=back
 
 =head1 SUPPORT
 
