@@ -5,6 +5,8 @@ package Plack::Middleware::ServerStatus::Tiny;
 # KEYWORDS: plack middleware status console debugging monitoring uptime access counter
 # vim: set ts=8 sts=4 sw=4 tw=115 et :
 
+our $VERSION = '0.003';
+
 use parent 'Plack::Middleware';
 use Plack::Util::Accessor qw(path _uptime _access_count);
 use Plack::Response;
