@@ -2,6 +2,7 @@ use strict;
 use warnings;
 package Plack::Middleware::ServerStatus::Tiny;
 # ABSTRACT: Tiny middleware for providing server status information
+# KEYWORDS: plack middleware status console debugging monitoring uptime access counter
 
 use parent 'Plack::Middleware';
 use Plack::Util::Accessor qw(path _uptime _access_count);
