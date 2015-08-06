@@ -93,5 +93,7 @@ I am also usually active on irc, as 'ether' at C<irc.perl.org>.
 
 =for :list
 * L<Plack::Middleware::ServerStatus::Lite>
+* L<Plack::Middleware>
+* L<Plack::Builder>
 
 =cut
