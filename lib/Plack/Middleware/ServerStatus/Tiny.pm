@@ -33,10 +33,12 @@ sub call
         my $content = 'uptime: ' . (time - $self->_uptime)
             . '; access count: ' . $self->_access_count;
 
-        my $res = Plack::Response->new('200');
-        $res->content_type('text/plain');
-        $res->content_length(length $content);
-        $res->body($content);
+        my $res = Plack::Response->new(
+            '200',
+            { content_type => 'text/plain', content_length => length $content },
+            $content,
+        );
+
         return $res->finalize;
     }
 
