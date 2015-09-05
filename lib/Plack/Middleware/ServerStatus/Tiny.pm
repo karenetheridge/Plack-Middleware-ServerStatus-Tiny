@@ -81,7 +81,7 @@ restart, and how many requests this particular process has serviced.
 
 =head2 C<path>
 
-The path which returns the server status.
+The path which returns the server status. This is required; there is no default.
 
 =head1 SUPPORT
 
