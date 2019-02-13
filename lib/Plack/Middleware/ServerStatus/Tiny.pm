@@ -1,9 +1,9 @@
 use strict;
 use warnings;
 package Plack::Middleware::ServerStatus::Tiny;
+# vim: set ts=8 sts=4 sw=4 tw=115 et :
 # ABSTRACT: Tiny middleware for providing server status information
 # KEYWORDS: plack middleware status console debugging monitoring uptime access counter
-# vim: set ts=8 sts=4 sw=4 tw=115 et :
 
 our $VERSION = '0.003';
 
